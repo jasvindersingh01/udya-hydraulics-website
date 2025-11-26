@@ -1,16 +1,38 @@
-# React + Vite
+# Uday Hydraulics – Industrial Website (React + Tailwind)
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A professional and responsive demo website built for **Uday Hydraulics**, a supplier of hydraulic pumps, valves, cylinders, servo valves, and industrial hydraulic components.
 
-Currently, two official plugins are available:
+This project is created using **React**, **Vite**, and **Tailwind CSS**, with a clean B2B industrial theme.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+---
 
-## React Compiler
+## 🚀 Features
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+### ✅ Fully Responsive Industrial Website  
+Works across all devices – mobile, tablet, desktop.
 
-## Expanding the ESLint configuration
+### ✅ Professional UI  
+Dark/industrial theme with clean sections:
+- Hero Section
+- About Us
+- Services
+- Product Gallery (Real product images)
+- Contact Section
+- Footer with Quick Links
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+### ✅ Real Product Images  
+Integrated actual hydraulic components like:
+- Pumps  
+- Atos Valves  
+- Moog Servo Valves  
+- Solenoid Coils  
+
+### ✅ Contact Section  
+Includes business address, phone, email, WhatsApp, and contact form layout.
+
+### ✅ Clean & Maintainable Code  
+Modular structure with components inside `src/components`.
+
+---
+
+## 📁 Folder Structure
