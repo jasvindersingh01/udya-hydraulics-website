@@ -19,7 +19,7 @@ export default function Footer() {
         </div>
 
         <p className="text-xs text-gray-400">
-          © {new Date().getFullYear()} | Designed & Developed by <span className="text-red-500">Right Ads -Jasvinder</span>
+          © {new Date().getFullYear()} | Designed & Developed by <span className="text-red-500">Right Ads</span>
         </p>
       </div>
     </footer>
