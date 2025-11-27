@@ -4,6 +4,7 @@ import Yuken from "../assets/brands/Yuken.png";
 import Moog from "../assets/brands/Moog.png";
 import Vickers from "../assets/brands/Vickers.png";
 import Atos from "../assets/brands/Atos.png";
+import { motion } from "framer-motion";
 
 export default function Brands() {
   const brands = [
@@ -16,6 +17,12 @@ export default function Brands() {
   ];
 
   return (
+  <motion.h2
+      initial={{ opacity: 0, y: 50 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.8 }}
+      viewport={{ once: true }}
+    >
     <section className="py-14 bg-gray-50">
       <div className="max-w-6xl mx-auto px-6">
         <h2 className="text-3xl font-bold text-center mb-8">
@@ -38,5 +45,6 @@ export default function Brands() {
         </div>
       </div>
     </section>
+    </motion.h2>
   );
 }

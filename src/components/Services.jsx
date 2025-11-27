@@ -1,3 +1,5 @@
+import { motion } from "framer-motion";
+
 export default function Services() {
   const services = [
     {
@@ -27,30 +29,37 @@ export default function Services() {
   ];
 
   return (
-    <section id="services" className="py-16 bg-white scroll-mt-8">
-      <div className="max-w-7xl mx-auto px-6">
+    <motion.h2
+      initial={{ opacity: 0, y: 50 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.8 }}
+      viewport={{ once: true }}
+    >
+      <section id="services" className="py-16 bg-white scroll-mt-8">
+        <div className="max-w-7xl mx-auto px-6">
 
-        <h2 className="text-3xl font-bold text-center mb-10 text-gray-900">
-          Our Services
-        </h2>
+          <h2 className="text-3xl font-bold text-center mb-10 text-gray-900">
+            Our Services
+          </h2>
 
-        <div className="grid md:grid-cols-3 gap-8">
-          {services.map((item, index) => (
-            <div
-              key={index}
-              className="p-6 border border-gray-200 rounded-lg shadow-sm hover:shadow-md transition"
-            >
-              <h3 className="text-lg font-semibold text-gray-900 mb-2">
-                {item.title}
-              </h3>
-              <p className="text-gray-600 text-sm leading-relaxed">
-                {item.desc}
-              </p>
-            </div>
-          ))}
+          <div className="grid md:grid-cols-3 gap-8">
+            {services.map((item, index) => (
+              <div
+                key={index}
+                className="p-6 border border-gray-200 rounded-lg shadow-sm hover:shadow-md transition"
+              >
+                <h3 className="text-lg font-semibold text-gray-900 mb-2">
+                  {item.title}
+                </h3>
+                <p className="text-gray-600 text-sm leading-relaxed">
+                  {item.desc}
+                </p>
+              </div>
+            ))}
+          </div>
+
         </div>
-
-      </div>
-    </section>
+      </section>
+    </motion.h2>
   );
 }
