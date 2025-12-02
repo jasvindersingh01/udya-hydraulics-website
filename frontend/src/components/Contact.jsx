@@ -1,39 +1,171 @@
 import { motion } from "framer-motion";
+import { useState } from "react";
+import Swal from "sweetalert2";
 
 export default function Contact() {
+
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    phone: "",
+    message: "",
+  });
+
+  const [loading, setLoading] = useState(false);
+
+  const handleChange = (e) => {
+    setFormData({ ...formData, [e.target.name]: e.target.value });
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    setLoading(true);
+
+     if (!formData.name || !formData.email || !formData.phone || !formData.message) {
+    Swal.fire({
+      icon: "error",
+      title: "Missing Details",
+      text: "Please fill all the fields before submitting.",
+    });
+    setLoading(false);
+    return;
+  }
+
+    try {
+      const response = await fetch("http://localhost:5000/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(formData),
+      });
+
+      const result = await response.json();
+
+      if (result.success) {
+        Swal.fire({
+          title: "Message Sent!",
+          text: "We will contact you soon.",
+          icon: "success",
+        });
+
+        setFormData({ name: "", email: "", phone: "", message: "" });
+      } else {
+        Swal.fire({
+          icon: "error",
+          title: "Error",
+          text: "Something went wrong!",
+        });
+      }
+    } catch (error) {
+      Swal.fire({
+        icon: "error",
+        title: "Network Error",
+        text: "Please try again later.",
+      });
+    } finally {
+      setLoading(false);
+    }
+  };
+
+
   return (
-    <motion.h2
-      initial={{ opacity: 0, y: 50 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.8 }}
-      viewport={{ once: true }}
-    >
-      <section id="contact" className="py-14 bg-gray-50">
-        <div className="max-w-6xl mx-auto px-6 md:grid md:grid-cols-2 gap-12">
+    <section id="contact" className="py-20 bg-gray-50">
+      <motion.div
+        initial={{ opacity: 0, y: 40 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.6 }}
+        className="text-center mb-12 px-6"
+      >
+        <h2 className="text-4xl font-bold text-gray-800">Contact Us</h2>
+        <p className="text-gray-600 mt-3 max-w-2xl mx-auto">
+          For hydraulic pumps, valves, cylinders, power packs and more — get in touch.
+        </p>
+      </motion.div>
 
-          <div>
-            <h2 className="text-3xl font-bold mb-4">Contact Us</h2>
-            <p className="text-gray-600 mb-6">
-              For hydraulic pumps, valves, cylinders, power packs and more — get in touch.
-            </p>
+      <div className="max-w-6xl mx-auto px-6 grid md:grid-cols-2 gap-12">
 
-            <p><strong>Phone:</strong> 7217834397 / 8800459957</p>
-            <p><strong>Email:</strong> udayhydraulics@gmail.com</p>
-            <p><strong>Address:</strong> Ballabhgarh, Faridabad, Haryana</p>
+        {/* LEFT SIDE - INFO + MAP */}
+        <motion.div
+          initial={{ opacity: 0, x: -40 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
+          className="space-y-4"
+        >
+          <h3 className="text-2xl font-semibold">Get In Touch</h3>
+
+          <p><strong>Phone:</strong> 7217834397 / 8800459957</p>
+          <p><strong>Email:</strong> udayhydraulics@gmail.com</p>
+          <p><strong>Address:</strong> Ballabhgarh, Faridabad, Haryana</p>
+
+          <div className="w-full h-64 md:h-80 rounded-xl overflow-hidden shadow-lg mt-6">
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3510.8532938738267!2d77.29443367532532!3d28.363284675812746!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390cdd004d5c311f%3A0xf2fc12f486776732!2sUday%20hydraulics!5e0!3m2!1sen!2sin!4v1764657811228!5m2!1sen!2sin"
+              className="w-full h-full border-0"
+              allowFullScreen=""
+              loading="lazy"
+              referrerPolicy="no-referrer-when-downgrade"
+            ></iframe>
           </div>
+        </motion.div>
 
-          <form className="flex flex-col gap-4 mt-8 md:mt-0">
-            <input type="text" placeholder="Your Name" className="p-3 border rounded" />
-            <input type="text" placeholder="Phone Number" className="p-3 border rounded" />
-            <textarea rows="4" placeholder="Message" className="p-3 border rounded"></textarea>
+        <motion.form
+        onSubmit={handleSubmit}
+          initial={{ opacity: 0, x: 40 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
+          className="bg-white p-8 rounded-xl shadow-lg space-y-5"
+        >
+          <h3 className="text-xl font-semibold mb-2">Send Us a Message</h3>
 
-            <button className="bg-red-600 text-white px-6 py-3 rounded-md">
-              Send Message
-            </button>
-          </form>
+          <input
+            type="text"
+            name="name"
+            value={formData.name}
+            onChange={handleChange}
+            placeholder="Your Name"
+            className="w-full p-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-red-500"
+          />
 
-        </div>
-      </section>
-    </motion.h2>
+          <input
+            type="email"
+            name="email"
+            value={formData.email}
+            onChange={handleChange}
+            placeholder="Email Address"
+            className="w-full p-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-red-500"
+          />
+
+          <input
+            type="text"
+            name="phone"
+            value={formData.phone}
+            onChange={handleChange}
+            placeholder="Phone Number"
+            className="w-full p-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-red-500"
+          />
+          <textarea
+            rows="4"
+            placeholder="Your Message"
+            name="message"
+            value={formData.message}
+            onChange={handleChange}
+            className="w-full p-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-red-500"
+          ></textarea>
+
+          <button
+            type="submit"
+            disabled={loading}
+            className={`bg-red-600 text-white px-6 py-3 rounded-md transition ${loading ? "bg-red-400 cursor-not-allowed" : "hover:bg-red-700 cursor-pointer"
+              }`}
+          >
+            {loading ? "Sending..." : "Send Message"}
+          </button>
+
+        </motion.form>
+
+      </div>
+    </section>
   );
 }
