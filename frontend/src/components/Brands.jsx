@@ -54,7 +54,7 @@ export default function Brands() {
               <img
                 src={logo}
                 className="
-                  w-24 h-auto object-contain
+                  w-34 h-auto object-contain
                   grayscale opacity-60
                   hover:grayscale-0 hover:opacity-100
                   transition

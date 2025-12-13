@@ -8,6 +8,7 @@ import Home from "./pages/Home";
 import ProductsPage from "./pages/ProductsPage";
 import AboutPage from "./pages/AboutPage";
 import ContactPage from "./pages/ContactPage";
+import Industries from "./pages/Industries";
 
 export default function App() {
   return (
@@ -19,6 +20,8 @@ export default function App() {
         <Route path="/" element={<Home />} />
 
         <Route path="/products" element={<ProductsPage />} />
+
+        <Route path="/industries" element={<Industries />} />
 
         <Route path="/about" element={<AboutPage />} />
 

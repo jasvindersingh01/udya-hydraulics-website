@@ -3,15 +3,17 @@ import Brands from "../components/Brands";
 import Products from "../components/ProductsReview";
 import About from "../components/AboutPreview";
 import WhyChooseUs from "../components/WhyChooseUs";
+import IndustriesPreview from "../components/IndustriesPreview";
 
 export default function Home() {
   return (
     <>
       <Hero />
       <About />
+      <Products /> 
+      <IndustriesPreview />
       <WhyChooseUs />
       <Brands />
-      <Products /> 
        <section className="py-16 bg-gray-50">
         <div className="max-w-7xl mx-auto px-6">
           <h3 className="text-3xl font-bold text-center mb-10">Product Demo Videos</h3>

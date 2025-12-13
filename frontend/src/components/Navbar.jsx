@@ -2,6 +2,8 @@ import { useState } from "react";
 import Logo from "../assets/Logo.webp";
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
+import { FaPhoneAlt } from "react-icons/fa";
+
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
@@ -9,7 +11,7 @@ export default function Navbar() {
   return (
     <header className="fixed top-0 left-0 w-full bg-white shadow z-50">
 
-      <nav className="max-w-7xl mx-auto px-6 py-2 flex items-center justify-between">
+      <nav className="mx-auto px-6 py-2 flex items-center justify-between">
 
         <div className="flex items-center gap-3">
           <img
@@ -63,6 +65,7 @@ export default function Navbar() {
                 </div>
               </div>
             </Link>
+            <Link className="hover:text-red-500" to="/industries">Industries</Link>
             <Link className="hover:text-red-500" to="/about">About Us</Link>
             <Link className="hover:text-red-500" to="/contact">Contact</Link>
           </ul>
@@ -70,10 +73,13 @@ export default function Navbar() {
         </motion.h2>
         <a
           href="tel:7217834397"
-          className="px-4 py-2 bg-red-600 text-white rounded-md hidden md:block hover:bg-red-700 transition"
+          className="hidden md:flex items-center gap-2 px-4 py-2 bg-red-600 text-white rounded-md hover:bg-red-700 transition font-medium"
         >
-          Call Now
+          <FaPhoneAlt className="text-sm" />
+          <span>Call: 7217834397</span>
         </a>
+
+
 
         <button
           onClick={() => setIsOpen(!isOpen)}

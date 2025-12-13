@@ -17,17 +17,36 @@ export default function Hero() {
               transition={{ duration: 0.8 }}
               viewport={{ once: true }}
             >
-              <h1 className="text-4xl md:text-6xl font-bold text-white tracking-wide">
+              <h1 className="text-4xl md:text-6xl font-bold text-white tracking-wide leading-tight">
                 Precision in Motion
               </h1>
-              <p className="text-gray-200 mt-4 text-lg tracking-wide mx-1">
+
+              <p className="text-gray-200 mt-4 text-lg md:text-xl tracking-wide max-w-3xl">
+                Reliable hydraulic solutions engineered for performance, durability and
+                industrial excellence.
+              </p>
+
+              <p className="text-gray-300 mt-2 text-sm md:text-base tracking-wide">
                 Hydraulic Pumps • Valves • Cylinders • Power Packs • Servo Hydraulics
               </p>
 
-              <div className="mt-6 flex gap-4">
-                <Link to="/contact" className="bg-red-600 text-white px-6 py-3 rounded-md">
-                  Get Quote
+              <div className="flex flex-wrap gap-4 mt-8">
+                <Link
+                  to="/contact"
+                  className="px-6 py-3 bg-red-600 text-white rounded-md font-medium hover:bg-red-700 transition"
+                >
+                  Get Best Quote
                 </Link>
+
+                <Link
+                  to="/products"
+                  className="px-6 py-3 border border-white text-white rounded-md font-medium hover:bg-white hover:text-black transition"
+                >
+                  View Products
+                </Link>
+              </div>
+
+              <div className="mt-6 flex gap-4">
                 <a
                   href="https://wa.me/917217834397?text=Hello%20I%20want%20to%20know%20about%20your%20products"
                   target="_blank"
