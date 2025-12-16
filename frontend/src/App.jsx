@@ -12,7 +12,7 @@ import Industries from "./pages/Industries";
 
 export default function App() {
   return (
-    <BrowserRouter>
+    <BrowserRouter basename="/udyahydraulics/">
     <ScrollToTop />
       <Navbar />
 
