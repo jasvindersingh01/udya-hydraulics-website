@@ -56,18 +56,16 @@ const industries = [
 export default function Industries() {
   return (
     <>
-      {/* BANNER */}
-      <div className="w-full h-[25vh] md:h-[40vh] relative">
+      <div className="w-full h-[24vh] md:h-[34vh] relative">
         <img src={banner} className="w-full h-full object-cover opacity-90" />
         <div className="absolute inset-0 bg-black/50"></div>
-        <div className="absolute inset-0 flex items-center justify-center pt-16">
+        <div className="absolute inset-0 flex items-center justify-center">
           <h1 className="text-white text-4xl md:text-5xl font-bold">
-            Industries We Serve
+            Industries
           </h1>
         </div>
       </div>
 
-      {/* INTRO */}
       <section className="py-14 bg-white">
         <div className="max-w-4xl mx-auto px-6 text-center">
           <h2 className="text-3xl md:text-4xl font-bold mb-4">

@@ -83,22 +83,20 @@ const productName = queryParams.get("product");
 
   return (
     <>
-      {/* Banner */}
-      <div className="w-full h-[25vh] md:h-[40vh] relative">
+      <div className="w-full h-[24vh] md:h-[34vh] relative">
         <img
           src={banner}
           alt="Banner"
           className="w-full h-full object-cover object-center opacity-90"
         />
         <div className="absolute inset-0 bg-black/40" />
-        <div className="absolute inset-0 flex items-center justify-center pt-16">
+        <div className="absolute inset-0 flex items-center justify-center">
           <h1 className="text-white text-4xl md:text-5xl font-bold drop-shadow-lg">
             Contact Us
           </h1>
         </div>
       </div>
 
-      {/* Contact Section */}
       <section id="contact" className="py-20 bg-gray-50">
         <motion.div
           initial={{ opacity: 0, y: 40 }}
@@ -125,7 +123,7 @@ const productName = queryParams.get("product");
             <p><strong>📞 Phone:</strong> 7217834397 / 8800459957</p>
             <p><strong>✉️ Email:</strong> udayhydraulics@gmail.com</p>
             <p>
-              <strong>📍 Address:</strong> Ballabhgarh, Faridabad, Haryana
+              <strong>📍 Address:</strong> H.no 92, Sector 22 Rd, Near Bikaner Misthan Bhandar, Faridabad
             </p>
 
             <p className="mt-4 text-gray-700">

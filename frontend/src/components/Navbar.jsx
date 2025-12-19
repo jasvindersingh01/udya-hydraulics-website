@@ -9,6 +9,7 @@ export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const [hideTopbar, setHideTopbar] = useState(false);
+  const [isProductsOpen, setIsProductsOpen] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -107,23 +108,125 @@ export default function Navbar() {
       </nav>
 
       <div
-        className={`md:hidden bg-white shadow-inner overflow-hidden transition-all duration-300 ${isOpen ? "max-h-96 py-4" : "max-h-0 py-0"
-          }`}
+        className={`
+    md:hidden bg-white shadow-inner overflow-hidden
+    transition-all duration-300
+    ${isOpen ? "max-h-[500px] py-4" : "max-h-0 py-0"}
+  `}
       >
         <ul className="flex flex-col gap-4 px-6 text-gray-700 font-medium">
-          <li><a href="#home" onClick={() => setIsOpen(false)} className="hover:text-red-600">Home</a></li>
-          <li><a href="#services" onClick={() => setIsOpen(false)} className="hover:text-red-600">Services</a></li>
-          <li><a href="#products" onClick={() => setIsOpen(false)} className="hover:text-red-600">Products</a></li>
-          <li><a href="#about" onClick={() => setIsOpen(false)} className="hover:text-red-600">About Us</a></li>
-          <li><a href="#contact" onClick={() => setIsOpen(false)} className="hover:text-red-600">Contact</a></li>
 
-          <a
-            href="tel:7217834397"
-            className="mt-2 inline-block w-max px-4 py-2 bg-red-600 text-white rounded-md hover:bg-red-700 transition"
-            onClick={() => setIsOpen(false)}
-          >
-            Call Now
-          </a>
+          <li>
+            <Link
+              to="/"
+              onClick={() => setIsOpen(false)}
+              className="hover:text-red-600 block"
+            >
+              Home
+            </Link>
+          </li>
+
+          {/* PRODUCTS DROPDOWN */}
+          <li>
+            <button
+              onClick={() => setIsProductsOpen(!isProductsOpen)}
+              className="flex justify-between items-center w-full hover:text-red-600"
+            >
+              Products
+              <span className="text-lg">{isProductsOpen ? "−" : "+"}</span>
+            </button>
+
+            {isProductsOpen && (
+              <ul className="mt-3 ml-4 flex flex-col gap-3 text-sm">
+
+                <Link
+                  to="/products?cat=pumps"
+                  onClick={() => {
+                    setIsOpen(false);
+                    setIsProductsOpen(false);
+                  }}
+                  className="hover:text-red-600"
+                >
+                  Hydraulic Pumps
+                </Link>
+
+                <Link
+                  to="/products?cat=valves"
+                  onClick={() => {
+                    setIsOpen(false);
+                    setIsProductsOpen(false);
+                  }}
+                  className="hover:text-red-600"
+                >
+                  Hydraulic Valves
+                </Link>
+
+                <Link
+                  to="/products?cat=cylinders"
+                  onClick={() => {
+                    setIsOpen(false);
+                    setIsProductsOpen(false);
+                  }}
+                  className="hover:text-red-600"
+                >
+                  Hydraulic Cylinders
+                </Link>
+
+                <Link
+                  to="/products?cat=powerpacks"
+                  onClick={() => {
+                    setIsOpen(false);
+                    setIsProductsOpen(false);
+                  }}
+                  className="hover:text-red-600"
+                >
+                  Power Packs
+                </Link>
+
+              </ul>
+            )}
+          </li>
+
+          <li>
+            <Link
+              to="/industries"
+              onClick={() => setIsOpen(false)}
+              className="hover:text-red-600 block"
+            >
+              Industries
+            </Link>
+          </li>
+
+          <li>
+            <Link
+              to="/about"
+              onClick={() => setIsOpen(false)}
+              className="hover:text-red-600 block"
+            >
+              About Us
+            </Link>
+          </li>
+
+          <li>
+            <Link
+              to="/contact"
+              onClick={() => setIsOpen(false)}
+              className="hover:text-red-600 block"
+            >
+              Contact
+            </Link>
+          </li>
+
+          <li>
+            <a
+              href="tel:7217834397"
+              className="mt-2 inline-block w-max px-4 py-2 bg-red-600 text-white rounded-md hover:bg-red-700 transition"
+              onClick={() => setIsOpen(false)}
+            >
+              Call: 7217834397
+            </a>
+          </li>
+
         </ul>
       </div>
     </header>

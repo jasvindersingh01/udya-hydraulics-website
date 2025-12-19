@@ -12,7 +12,7 @@ import certificate from "../assets/about/certificate.webp";
 export default function About() {
   return (
     <>
-      <div className="w-full h-[25vh] md:h-[40vh] relative">
+      <div className="w-full h-[25vh] md:h-[34vh] relative">
         <img
           src={banner}
           alt="Banner"
@@ -20,7 +20,7 @@ export default function About() {
         />
         <div className="absolute inset-0 bg-black/40"></div>
 
-        <div className="absolute inset-0 flex items-center justify-center pt-16">
+        <div className="absolute inset-0 flex items-center justify-center">
           <h1 className="text-white text-4xl md:text-5xl font-bold drop-shadow-lg">
             About Us
           </h1>
@@ -42,7 +42,7 @@ export default function About() {
           </h2>
 
           <div className="grid md:grid-cols-3 gap-10">
-            {/* LEFT — TEXT */}
+
             <div className="md:col-span-2 space-y-5">
               <p className="text-gray-700 leading-relaxed">
                 Uday Hydraulics is a trusted{" "}
@@ -61,7 +61,6 @@ export default function About() {
                 continue to grow with reliability and customer trust.
               </p>
 
-              {/* FACTSHEET */}
               <div className="mt-6">
                 <h3 className="text-xl font-semibold mb-3">Company Factsheet</h3>
                 <div className="mt-6">

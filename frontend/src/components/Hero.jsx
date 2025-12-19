@@ -6,7 +6,7 @@ export default function Hero() {
   return (
     <section id="home" className="pt-2">
       <div
-        className="h-[100vh] bg-cover bg-center flex items-center"
+        className="h-[90vh] bg-cover bg-center flex items-center"
         style={{ backgroundImage: `url(${hero})` }}
       >
         <div className="bg-black/60 w-full h-full flex items-center px-10">
