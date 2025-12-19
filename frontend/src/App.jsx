@@ -2,6 +2,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import ScrollToTop from "./components/ScrollToTop";
 
 import Navbar from "./components/Navbar";
+import Topbar from "./components/Topbar";
 import Footer from "./components/Footer";
 
 import Home from "./pages/Home";
@@ -14,8 +15,10 @@ export default function App() {
   return (
     <BrowserRouter basename="/udyahydraulics/">
     <ScrollToTop />
+    <Topbar />
       <Navbar />
 
+      <main className="pt-[72px] md:pt-[100px]">
       <Routes>
         <Route path="/" element={<Home />} />
 
@@ -27,6 +30,7 @@ export default function App() {
 
         <Route path="/contact" element={<ContactPage />} />
       </Routes>
+    </main>
 
       <Footer />
 

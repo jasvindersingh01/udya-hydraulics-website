@@ -56,7 +56,7 @@ export default function Hero() {
                   <img
                     src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg"
                     alt="WhatsApp"
-                    className="w-10 h-10"
+                    className="w-8 h-8"
                   />
                 </a>
 

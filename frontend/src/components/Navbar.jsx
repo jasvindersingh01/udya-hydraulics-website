@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Logo from "../assets/Logo.webp";
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
@@ -7,10 +7,27 @@ import { FaPhoneAlt } from "react-icons/fa";
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
+  const [hideTopbar, setHideTopbar] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setHideTopbar(window.scrollY > 50);
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
 
   return (
-    <header className="fixed top-0 left-0 w-full bg-white shadow z-50">
-
+    <header
+      className={`
+    fixed w-full z-50 bg-white transition-all duration-300
+    top-0
+    ${hideTopbar ? "md:top-0 shadow-md" : "md:top-[36px]"}
+  `}
+    >
       <nav className="mx-auto px-6 py-2 flex items-center justify-between">
 
         <div className="flex items-center gap-3">
