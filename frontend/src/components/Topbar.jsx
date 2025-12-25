@@ -26,11 +26,11 @@ export default function Topbar() {
         {/* LEFT */}
         <div className="flex items-center gap-6 flex-wrap">
 
-          <span className="flex items-center gap-2">
-            <FaPhoneAlt className="text-red-500 text-base" />
-            <a href="tel:7217834397" className="hover:text-white">
-             +91 7217834397
-            </a>
+           <span className="flex items-center gap-2 max-w-md">
+            <FaMapMarkerAlt className="text-red-500 text-base" />
+            <span className="truncate">
+              H.no 92, Sector 22 Rd, Near Bikaner Misthan Bhandar, Faridabad
+            </span>
           </span>
 
           <span className="flex items-center gap-2">
@@ -40,17 +40,16 @@ export default function Topbar() {
             </a>
           </span>
 
-          <span className="flex items-center gap-2 max-w-md">
-            <FaMapMarkerAlt className="text-red-500 text-base" />
-            <span className="truncate">
-              H.no 92, Sector 22 Rd, Near Bikaner Misthan Bhandar, Faridabad
-            </span>
-          </span>
-
         </div>
 
         {/* RIGHT */}
         <div className="flex items-center gap-5 text-lg">
+            <span className="flex items-center gap-2 text-sm">
+            <FaPhoneAlt className="text-red-500 text-base" />
+            <a href="tel:7217834397" className="hover:text-white">
+             +91 7217834397
+            </a>
+          </span>
           <a href="#" className="hover:text-red-500 transition">
             <FaFacebookF />
           </a>

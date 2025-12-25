@@ -67,7 +67,7 @@ export default function ProductsPage() {
         </div>
       </div>
 
-      <div className="max-w-7xl mx-auto py-25 px-6 grid md:grid-cols-4 gap-10">
+      <div className="mx-auto py-25 px-6 grid md:grid-cols-4 gap-10">
         <div className="bg-white p-5 rounded-xl shadow-md h-fit">
           <h3 className="font-bold mb-4 text-lg">Filters</h3>
 
